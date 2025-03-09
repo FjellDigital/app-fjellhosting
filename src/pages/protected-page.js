@@ -5,6 +5,10 @@ import { getProtectedResource } from "../services/message.service";
 
 export const ProtectedPage = () => {
   const [message, setMessage] = useState("");
+  const [arg1, setArg1] = useState("");
+  const [arg2, setArg2] = useState("");
+  const [arg3, setArg3] = useState("");
+  const [output, setOutput] = useState("Waiting for input...");
 
   useEffect(() => {
     let isMounted = true;
@@ -32,6 +36,55 @@ export const ProtectedPage = () => {
     };
   }, []);
 
+  const runScript = async () => {
+    setOutput("Submitting job...");
+    try {
+      const response = await fetch("/run-script", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ arg1, arg2, arg3 }),
+      });
+
+      if (!response.ok) {
+        const errorResponse = await response.json();
+        throw new Error(errorResponse.error || "Failed to submit job");
+      }
+
+      const { jobId } = await response.json();
+      setOutput(`Job submitted. Job ID: ${jobId}. Checking status...`);
+
+      pollJobStatus(jobId);
+    } catch (error) {
+      setOutput(`Error: ${error.message}`);
+      console.error("Error:", error);
+    }
+  };
+
+  const pollJobStatus = async (jobId) => {
+    try {
+      const response = await fetch(`/job-status/${jobId}`);
+      if (!response.ok) {
+        throw new Error("Failed to check job status");
+      }
+
+      const { status, result, error } = await response.json();
+
+      if (status === "completed") {
+        setOutput(`Output: ${result.output}`);
+      } else if (status === "failed") {
+        setOutput(`Error: ${error}`);
+      } else {
+        setOutput(`Job status: ${status}. Checking again in 2 seconds...`);
+        setTimeout(() => pollJobStatus(jobId), 2000);
+      }
+    } catch (error) {
+      setOutput(`Error: ${error.message}`);
+      console.error("Error:", error);
+    }
+  };
+
   return (
     <PageLayout>
       <div className="content-layout">
@@ -49,6 +102,13 @@ export const ProtectedPage = () => {
             </span>
           </p>
           <CodeSnippet title="Protected Message" code={message} />
+          <div>
+            <input type="text" value={arg1} onChange={(e) => setArg1(e.target.value)} placeholder="Domene" />
+            <input type="text" value={arg2} onChange={(e) => setArg2(e.target.value)} placeholder="Conteiner Config" />
+            <input type="text" value={arg3} onChange={(e) => setArg3(e.target.value)} placeholder="Cluster Antall" />
+            <button onClick={runScript}>Take Off</button>
+            <p>{output}</p>
+          </div>
         </div>
       </div>
     </PageLayout>
