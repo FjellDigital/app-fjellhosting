@@ -88,14 +88,11 @@ export const ProtectedPage = () => {
   return (
     <PageLayout>
       <div className="content-layout">
-        <h1 id="page-title" className="content__title">
-          Protected Page
-        </h1>
+        <h1 id="page-title" className="content__title">Protected Page</h1>
         <div className="content__body">
           <p id="page-description">
             <span>
-              This page retrieves a <strong>protected message</strong> from an
-              external API.
+              This page retrieves a <strong>protected message</strong> from an external API.
             </span>
             <span>
               <strong>Only authenticated users can access this page.</strong>
@@ -103,9 +100,24 @@ export const ProtectedPage = () => {
           </p>
           <CodeSnippet title="Protected Message" code={message} />
           <div>
-            <input type="text" value={arg1} onChange={(e) => setArg1(e.target.value)} placeholder="Domene" />
-            <input type="text" value={arg2} onChange={(e) => setArg2(e.target.value)} placeholder="Conteiner Config" />
-            <input type="text" value={arg3} onChange={(e) => setArg3(e.target.value)} placeholder="Cluster Antall" />
+            <input 
+              type="text" 
+              value={arg1} 
+              onChange={(e) => setArg1(e.target.value)} 
+              placeholder="Domene" 
+            />
+            <input 
+              type="text" 
+              value={arg2} 
+              onChange={(e) => setArg2(e.target.value)} 
+              placeholder="Conteiner Config" 
+            />
+            <input 
+              type="text" 
+              value={arg3} 
+              onChange={(e) => setArg3(e.target.value)} 
+              placeholder="Cluster Antall" 
+            />
             <button onClick={runScript}>Take Off</button>
             <p>{output}</p>
           </div>
