@@ -39,7 +39,7 @@ export const ProtectedPage = () => {
   const runScript = async () => {
     setOutput("Submitting job...");
     try {
-      const response = await fetch("/run-script", {
+      const response = await fetch("https://sst.fjellhosting.no/run-script", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -64,7 +64,7 @@ export const ProtectedPage = () => {
 
   const pollJobStatus = async (jobId) => {
     try {
-      const response = await fetch(`/job-status/${jobId}`);
+      const response = await fetch(`https://sst.fjellhosting.no/job-status/${jobId}`);
       if (!response.ok) {
         throw new Error("Failed to check job status");
       }
