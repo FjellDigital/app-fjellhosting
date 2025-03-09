@@ -42,9 +42,9 @@ export const ProtectedPage = () => {
       const response = await fetch("/run-script", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ arg1, arg2, arg3 })
+        body: JSON.stringify({ arg1, arg2, arg3 }),
       });
 
       if (!response.ok) {
@@ -94,7 +94,8 @@ export const ProtectedPage = () => {
         <div className="content__body">
           <p id="page-description">
             <span>
-              This page retrieves a <strong>protected message</strong> from an external API.
+              This page retrieves a <strong>protected message</strong> from an
+              external API.
             </span>
             <span>
               <strong>Only authenticated users can access this page.</strong>
