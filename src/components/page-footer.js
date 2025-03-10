@@ -1,5 +1,4 @@
 import React from "react";
-import "./page-footer.css"; // Ensure this is imported for styling
 
 const PageFooter = () => {
   return (
