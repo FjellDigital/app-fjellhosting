@@ -35,7 +35,7 @@ export const Auth0Features = () => {
 
   return (
     <div className="auth0-features">
-      <h2 className="auth0-features__title">Explore Auth0 Features</h2>
+      <h2 className="auth0-features__title">Hvorfor velge Fjell Hosting</h2>
       <div className="auth0-features__grid">
         {featuresList.map((feature) => (
           <Auth0Feature
