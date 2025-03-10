@@ -36,20 +36,8 @@ export const PublicPage = () => {
     <PageLayout>
       <div className="content-layout">
         <h1 id="page-title" className="content__title">
-          Public Page
+          Hva er server- side sporing?
         </h1>
-        <div className="content__body">
-          <p id="page-description">
-            <span>
-              This page retrieves a <strong>public message</strong> from an
-              external API.
-            </span>
-            <span>
-              <strong>Any visitor can access this page.</strong>
-            </span>
-          </p>
-          <CodeSnippet title="Public Message" code={message} />
-        </div>
       </div>
     </PageLayout>
   );
