@@ -5,14 +5,21 @@ const PageFooter = () => {
     <footer className="footer-container">
       <div className="footer-section">
         <h3>Kontakt oss</h3>
-        <p>📧 <a href="mailto:kontakt@fjelldigital.no">kontakt@fjelldigital.no</a></p>
+        <p>
+          📧{" "}
+          <a href="mailto:kontakt@fjelldigital.no">kontakt@fjelldigital.no</a>
+        </p>
         <p>⏰ Man - Fre | 09:00 - 16:00</p>
       </div>
 
       <div className="footer-section">
         <h3>Nyttige lenker</h3>
-        <p><a href="#">Personvern</a></p>
-        <p><a href="#">Standardvilkår</a></p>
+        <p>
+          <a href="#">Personvern</a>
+        </p>
+        <p>
+          <a href="#">Standardvilkår</a>
+        </p>
         <p>© Fjell Digital AS 2025</p>
       </div>
 
