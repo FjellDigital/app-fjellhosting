@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from "react"; // Removed useState
 import { PageLayout } from "../components/page-layout";
 import { getPublicResource } from "../services/message.service";
 
@@ -7,11 +7,7 @@ export const PublicPage = () => {
     let isMounted = true;
 
     const getMessage = async () => {
-      const { data, error } = await getPublicResource();
-
-      if (!isMounted) {
-        return;
-      }
+      await getPublicResource(); // Removed `data` and `error`
     };
 
     getMessage();

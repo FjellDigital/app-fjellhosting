@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react"; // Removed useState
 import { PageLayout } from "../components/page-layout";
 import { getProtectedResource } from "../services/message.service";
 
@@ -7,11 +7,7 @@ export const ProtectedPage = () => {
     let isMounted = true;
 
     const getMessage = async () => {
-      const { data, error } = await getProtectedResource();
-
-      if (!isMounted) {
-        return;
-      }
+      await getProtectedResource(); // Removed `data` and `error`
     };
 
     getMessage();
