@@ -3,8 +3,6 @@ import { PageLayout } from "../components/page-layout";
 import { getProtectedResource } from "../services/message.service";
 
 export const ProtectedPage = () => {
-  const [message, setMessage] = useState("");
-
   useEffect(() => {
     let isMounted = true;
 
@@ -13,14 +11,6 @@ export const ProtectedPage = () => {
 
       if (!isMounted) {
         return;
-      }
-
-      if (data) {
-        setMessage(JSON.stringify(data, null, 2));
-      }
-
-      if (error) {
-        setMessage(JSON.stringify(error, null, 2));
       }
     };
 
