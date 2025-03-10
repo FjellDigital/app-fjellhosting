@@ -35,7 +35,8 @@ export const PageFooter = () => {
             <p className="page-footer-message__description">
               <PageFooterHyperlink path="https://auth0.com/docs/quickstarts/">
                 <span>
-                Bestill og sett opp Google Tag Manager server-containere raskt og enkelt&nbsp;
+                  Bestill og sett opp Google Tag Manager server-containere raskt
+                  og enkelt&nbsp;
                 </span>
                 <u>på under 5 minutter</u>
               </PageFooterHyperlink>
