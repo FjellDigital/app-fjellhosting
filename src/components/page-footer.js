@@ -15,10 +15,10 @@ const PageFooter = () => {
       <div className="footer-section">
         <h3>Nyttige lenker</h3>
         <p>
-          <a href="#">Personvern</a>
+          <a href="/personvern">Personvern</a>
         </p>
         <p>
-          <a href="#">Standardvilkår</a>
+          <a href="/standardvilkar">Standardvilkår</a>
         </p>
         <p>© Fjell Digital AS 2025</p>
       </div>
