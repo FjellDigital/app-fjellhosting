@@ -13,7 +13,7 @@
 
   /* responsive */
 
-  min-width: 10rem;
+  min-width: 15rem;
   padding: 1.6rem 1.6rem;
 
   font-size: 1.6rem;
@@ -30,7 +30,7 @@
 }
 
 .button--primary {
-  background-color: var(--indigo);
+  background-color: #133B4B;
 }
 
 .button--primary:hover {
@@ -71,10 +71,10 @@
 .button__logout {
   min-width: 8.4rem;
 
-  border: 0.1rem solid var(--indigo);
+  border: 0.1rem solid #133B4B;
   color: var(--white);
-  background: var(--indigo);
-  width: 50%;
+  background: #133B4B;
+  width: 100%;
   font-size: 1.6rem;
 
   margin-right: 1.6rem;
@@ -99,7 +99,7 @@
   border: 0.1rem solid var(--white);
   color: var(--white);
   background-color: transparent;
-  width: 50%;
+  width: 100%;
   font-size: 1.6rem;
 
   margin-right: 1.6rem;
