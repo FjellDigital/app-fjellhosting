@@ -22,7 +22,7 @@ body {
   background-color:#9FC6C7;
   ;
 
-  color: var(--white);
+  color: #133B4B;
   font-family: var(--font-primary);
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -121,7 +121,7 @@ textarea {
 }
 
 a {
-  color: var(--white);
+  color: #133B4B;
   text-decoration: none;
 }
 
